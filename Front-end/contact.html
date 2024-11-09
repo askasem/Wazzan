@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required Meta Tags -->
+    <meta name="language" content="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="The Description of This Page Goes Right Here and its !Important" />
+    <meta name="keywords" content="phenix, phenix themes, phenix design, phenix wordporess, wordporess, themes, web design, web development, templates, responsive, gutenberg, plugins, javascript, sass, css4, next generation, utilities, typescript, bootstrap" />
+    <title>تطبيق وَزَّانُ الشِّعر - تواصل معنا</title>
+    <!-- Other Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" content="Sitename Goes Here">
+    <link rel="shortcut icon" type="image/png"  href="img/logo-icon.png">
+
+    <!-- Required CSS Files -->
+    <link href="css/phenix-rtl.css" rel="stylesheet" />
+    <!-- Load Fonts -->
+    <link id="main-font" href="webfonts/somar-rounded.css" rel="stylesheet" />
+    <link id="icons-font" href="webfonts/fontawesome-5.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header pdy-10 bg-white bx-shadow-dp-1" data-sticky="absolute">
+        <div class="container flexbox align-between align-center-y">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="img/logo.png" width="200" height="42" alt="" class="hidden-md-down" />
+                <img src="img/logo-icon.png" width="42" height="42" alt="" class="hidden-lg-up" />
+            </a>
+            <!-- Action Area -->
+            <div class="flexbox align-center-y">
+                <!-- Main Menu -->
+                <nav class="px-navigation hidden-md-down" style="--color:var(--dark-color);" data-id="main-menu" data-hover="true" data-mobile="custom" data-effect="fade">
+                    <ul class="reset-list flexbox fs-16">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="game.html">علّام يختبرك</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <!-- Menu Button -->
+                <a href="#" class="btn secondary menu-toggle hidden-lg-up square far fa-bars radius-sm" data-id="main-menu"></a>
+                <!-- App Button -->
+                <a href="app.html" class="btn bg-grade-primary color-white radius-sm ms-15">الكشف عن البيت الشعري</a>
+            </div>
+            <!-- // Action Area -->
+        </div>
+    </header>
+    <!-- // Main Header -->
+
+    <!-- Page Head -->
+    <div class="page-head px-media pdy-30 color-white bg-dark" data-src="img/head-bg.png">
+        <div class="container">
+            <!-- Title -->
+            <h1 class="fs-18 fs-md-22 fs-lg-25 lineheight-120 tx-nowrap">تواصل معنا</h1>
+            <!-- Breadcrumb -->
+            <ul class="px-breadcrumb reset-list flexbox color-gray custom-icon links-inherit" data-type="font-icon">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li>تواصل معنا</li>
+            </ul>
+            <!-- // Breadcrumb -->
+        </div>
+    </div>
+    <!-- // Page Head -->
+
+    <!-- Page Section -->
+    <div class="container pdy-50">
+        <!-- Grid -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-12 col-md-8">
+                <!-- Area Title -->
+                <h2 class="fs-18 h3-lg color-primary mb-5">ارسل لنا رسالة</h2>
+                <p class="mb-30">يمكنك التواصل مع فريق وَزَّانُ الشِّعر عبر ملء الحقول التالية والضغط على "إرسال الرسالة":</p>
+                <!-- Grid -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-12 col-md-6 mb-30">
+                        <input id='name' type="text" class="form-control radius-sm large-lg fs-15" placeholder="الاسم الكامل *">
+                    </div>
+                    <!-- Column -->
+                    <div class="col-12 col-md-6 mb-30">
+                        <input id='email' type="text" class="form-control radius-sm large-lg fs-15" placeholder="البريد الالكتروني">
+                    </div>
+                    <!-- Column -->
+                    <div class="col-12 col-md-6 mb-30">
+                        <input id='phone' type="text" class="form-control radius-sm large-lg fs-15" placeholder="رقم الهاتف">
+                    </div>
+                    <!-- Column -->
+                    <div class="col-12 col-md-6 mb-30">
+                        <input id='subject' type="text" class="form-control radius-sm large-lg fs-15" placeholder="الموضوع *">
+                    </div>
+                    <!-- Column -->
+                    <div class="col-12 mb-30 clear-after">
+                        <!-- Form Control -->
+                        <textarea id='content' class="form-control radius-sm mb-30 large-lg fs-15" placeholder="محتوى الرسالة *"></textarea>
+                        <button id='send-email-btn' class="btn primary radius-sm fs-14 w-min-150 float-end">إرسال الرسالة</button>
+                    </div>
+                    <script>
+                        const sendBtn = document.getElementById("send-email-btn");
+
+                        sendBtn.addEventListener("click", function(event) {
+                            
+                            //submit contact details to server
+            				fetch("https://qistass.innovast.technology/contact-det.php", {
+            				//fetch("/contact.php", { //correct the URL
+            				  method: "POST",
+                              //mode: 'cors', //"no-cors"
+            				  body: 
+            					  JSON.stringify({
+                                      name: document.getElementById("name").value,
+                                      email: document.getElementById("email").value,
+                                      phone: document.getElementById("phone").value,
+                                      subject: document.getElementById("subject").value,
+                                      content: document.getElementById("content").value,
+                				  }),
+            				
+            				  headers: {
+            				    "Content-type": "application/json; charset=UTF-8"
+            				  }
+            				})
+            				.then(async response => { 
+            					res = await response.json();
+            					if(res === "Ok"){
+            						showFadingMessage('رسالتك وصلت. شكراً على تواصلك');
+                                    document.getElementById("name").value = "";
+                                    document.getElementById("email").value = "";
+                                    document.getElementById("phone").value = "";
+                                    document.getElementById("subject").value = "";
+                                    document.getElementById("content").value = "";
+                                }
+            					else
+                					showFadingMessage('حدث خطأ أثناء التواصل.. تأكد من ملء الحقول المطلوبة وحاول ثانية');
+            				})
+            				.catch(error => { 
+           						showFadingMessage('حدث خطأ أثناء التواصل.. حاول لاحقاً');
+            				});	
+                        
+                          /** old code to send contact info by email
+                          const subject = encodeURIComponent(document.getElementById("subject").value);
+                          const name = encodeURIComponent(document.getElementById("name").value);
+                          const email = encodeURIComponent(document.getElementById("email").value);
+                          const phone = encodeURIComponent(document.getElementById("phone").value);
+                          const content = encodeURIComponent(document.getElementById("content").value);
+                          const body2 = 'الاسم: ' + name + '\n' + 'البريد الالكتروني: ' + email + '\n' 
+                              + 'الهاتف:' + phone +'\n\n' + content +'\n';
+
+                          const body = encodeURIComponent(body2);
+
+                          // Use the mailto: URL scheme to invoke the email client with subject and body data
+                          const mailtoLink = `mailto:'qistass@innovast.technology'?subject=${subject}&body=${body}`;
+                        
+                          // Open the email client
+                          window.location.href = mailtoLink;
+                          */
+                        });
+
+                        function showFadingMessage(message) {
+                    		Phenix(document).notifications({
+                        		type : "warning", //=== Message Type [normal, error, success, warning]
+                        		message : message, //=== Message Content
+                        		position : "bottom, start", //=== Message Position [top,center,bottom] [start,center,end]
+                        		duration : 1000
+                    		});
+                    	}
+                    </script>
+                    <!-- // Column -->
+                </div>
+                <!-- // Grid -->
+            </div>
+            <!-- Column -->
+            <div class="col-12 col-md-4">
+                <h2 class="fs-18 h3-lg color-primary mb-30">تواصل معنا</h2>
+                <!-- Contact Widget -->
+                <div class="bg-white radius-md pd-20 bx-shadow-dp-1">
+                    <!-- Info List -->
+                    <ul class="reset-list flexbox icons-primary fs-14">
+                        <li class="col-12 pdy-10 divider-b tx-icon far fa-at">wazzan at arabani dot net</li>
+                        <!-- <li class="col-12 pdy-10 divider-b tx-icon far fa-phone">+9000XXX365XX789</li> 
+                        <li class="col-12 pdy-10 divider-b tx-icon far fa-map-marker-alt fs-13"></li>
+                        -->
+                        <li class="col-12 pdy-10 divider-b tx-icon far fa-map-marker-alt fs-13">تحدي علام</li>
+                    </ul>
+                    <!-- Buttons -->
+                    <div class="flexbox divider-t pdt-10">
+                        <span class="color-primary">تابعنا على</span>
+                        <a href="#" class="btn primary ms-10 tiny square radius-circle fab fa-instagram"></a>
+                        <a href="#" class="btn primary ms-10 tiny square radius-circle fab fa-twitter"></a>
+                        <a href="#" class="btn primary ms-10 tiny square radius-circle fab fa-facebook-f"></a>
+                        <a href="#" class="btn primary ms-10 tiny square radius-circle fab fa-linkedin"></a>
+                        <a href="#" class="btn success ms-10 tiny square radius-circle fab fa-whatsapp"></a>
+                    </div>
+                    <!-- // Buttons -->
+                </div>
+                <!-- // Contact Widget -->
+            </div>
+            <!-- // Column -->
+        </div>
+        <!-- // Grid -->
+    </div>
+    <!-- // Page Section -->
+
+    <!-- Mini Footer -->
+    <div class="pdy-20 bg-dark-lvl-2 color-gray">
+        <div class="container flexbox align-between align-center-y gpy-0">
+            <p class="tx-align-center fs-14 lineheight-100">تحدي علام 2024 - Allam Challenge 2024</p>
+            <!-- <p class="weight-bold fs-18">عدد الزوار : 87654</p> -->
+<a href="https://info.flagcounter.com/DkcF"><img src="https://s11.flagcounter.com/count2/DkcF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_12/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>        </div>
+    </div>
+
+
+    <!-- Required JS Files -->
+    <script src="js/phenix.js"></script>
+</body>
+</html>

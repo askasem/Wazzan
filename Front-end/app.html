@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required Meta Tags -->
+    <meta name="language" content="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="The Description of This Page Goes Right Here and its !Important" />
+    <meta name="keywords" content="phenix, phenix themes, phenix design, phenix wordporess, wordporess, themes, web design, web development, templates, responsive, gutenberg, plugins, javascript, sass, css4, next generation, utilities, typescript, bootstrap" />
+    <title>تطبيق وَزَّانُ الشِّعر</title>
+    <!-- Other Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" content="Sitename Goes Here">
+    <link rel="shortcut icon" type="image/png"  href="img/logo-icon.png">
+    
+    <!-- Required CSS Files -->
+    <link href="css/phenix-rtl.css" rel="stylesheet" />
+    <!-- Asem added the following -->
+    <link href="css/custom-app.css" rel="stylesheet" />
+
+    <!-- Load Fonts -->
+    <link id="main-font" href="webfonts/somar-rounded.css" rel="stylesheet" />
+    <link id="icons-font" href="webfonts/fontawesome-5.css" rel="stylesheet" />
+
+    <style>
+        #poetry-seas-group h3 { text-align: right!important; }
+    </style>
+    
+</head>
+<body>
+    
+    <!-- Main Header -->
+    <header class="main-header pdy-10 bg-white bx-shadow-dp-1" data-sticky="absolute">
+        <div class="container-fluid flexbox align-between align-center-y">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="img/logo.png" width="200" height="42" alt="" class="hidden-md-down" />
+                <img src="img/logo-icon.png" width="42" height="42" alt="" class="hidden-lg-up" />
+            </a>
+            <!-- Action Area -->
+            <div class="flexbox align-center-y">
+                <!-- Main Menu -->
+                <nav class="px-navigation hidden-md-down" style="--color:var(--dark-color);" data-id="main-menu" data-hover="true" data-mobile="custom" data-effect="fade">
+                    <ul class="reset-list flexbox fs-16">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="game.html">علّام يختبرك</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <!-- Menu Button -->
+                <a href="#" class="btn secondary menu-toggle hidden-lg-up square far fa-bars radius-sm" data-id="main-menu"></a>
+                <!-- App Button -->
+                <a href="app.html" class="btn bg-grade-primary color-white radius-sm ms-15">الكشف عن البيت الشعري</a>
+            </div>
+            <!-- // Action Area -->
+        </div>
+    </header>
+    <!-- // Main Header -->
+
+    <!-- App Root -->
+    <div class="pdx-0">
+        <!-- Grid -->
+        <div class="row gpx-0 fullscreen">
+            <!-- Column -->
+            <div class="col col-lg-6 px-media bgr-n bgh-75 bgp-cc bg-white bx-shadow-dp-1" data-src="img/background-father.svg">
+                <!-- Content Wrapper -->
+                <div class="pd-15 pd-md-30 pd-lg-40 pd-xl-50 px-scrollbar">
+                    <!-- Head Content -->
+                    <h2> اعرف البحر الشعري لقصيدتك</h2>
+                    <p>
+                        يعمل تطبيق وزان الشعر بتقنيات الذكاء الاصطناعي لاستقبال الأبيات الشعرية صوتياً، ويستخدم نموذج علَّام لتشكيل الأبيات وتقطيعها عروضياً، وزنتها على بحور الشعر الستة عشر.
+                    </p>
+                    
+					<!-- Buttons Group -->
+                    <div class="flexbox align-center-x tx-align-center">
+                        <!-- Button -->
+                        <div class="number-counter flexbox align-center">
+                            <!-- Increase -->
+                            <button type="button" class="btn square radius-circle secondary fas fa-plus increase-btn tiny"></button>
+                            <!-- Input -->
+                            <input type="number" value="2" class="reset-appearance btn square bg-primary-offwhite number-counter-input radius-circle xlarge border-alpha-15 border-1 border-solid mx-5">
+                            <!-- Decrease -->
+                            <button type="button" class="btn square radius-circle secondary fas fa-minus decrease-btn tiny"></button>
+                            <!-- Text -->
+                            <h6 class="fs-15 fluid mt-15">عدد الأبيات</h6>
+                        </div>
+                        <!-- Button -->
+                        <button id="mic_button" type="button" class="reset-button mx-10 voice-btn w-min-150">
+                            <span class="mouse-no-events btn primary icon-lg square radius-circle xlarge fas fa-microphone mb-15"></span>
+                            <h6 class="fs-15 mouse-no-events">ابدأ الإلقاء</h6>
+                        </button>
+                    </div>
+                    <!-- // Buttons Group -->
+					
+					<!-- User Form -->
+                    <form action="app.html" class="poetry-verses mb-20">
+                    </form>
+                    <div id="infoMessage" class="info-message">
+                    </div>
+
+                </div>
+                <!-- // Content Wrapper -->
+            </div>
+            <!-- Column -->
+            <div class="col col-lg-6 px-media bgr-n bgh-75 bgp-cc" data-src="img/background-robot.svg">
+                <!-- Content Wrapper -->
+                <div class="pdy-40 pdx-15 pdx-md-30 pd-lg-40 pd-xl-50 px-scrollbar">
+                    <!-- AI Form -->
+                    <form action="app.html"  class="poetry-generated">
+                        <!-- Headline -->
+
+                        <div class="flexbox">
+                            <h3 class="h5 mb-20">الأبيات مشكلة *</h3>
+                            
+                            <!-- Dropdown Wrapper -->
+                            <div class="px-dropdown mb-15 pdx-15" data-hover>
+                                <!-- Toggle Button -->
+                                <button style="pointer-events: none;" class="px-toggle btn small secondary"> <!-- </button> class="px-toggle btn small secondary"> -->
+                                    أمثلة <i class="ms-5 fas fa-angle-down"></i>
+                                </button>
+                                <!-- Dropdown Target -->
+                                <ul class="px-dropdown-list reset-list bg-white fs-18 w-min-200">
+                                    <li><a id="example-1" href="#">مثال - البحر الطويل</a></li>
+                                    <li><a id="example-2" href="#">مثال - البحر البسيط</a></li>
+                                </ul>
+                                <!-- // Dropdown Target -->
+                            </div>
+                            <!-- // Dropdown Wrapper -->
+                        </div>
+                        
+                        <!-- Grid -->
+                        <div class="poetry-verses-ai mb-30">
+                            
+                        </div>
+                        <!-- // Grid -->
+
+                        <!-- Divider -->
+                        <hr class="mb-30 hidden-sm-down" />
+
+                        <!-- Headline -->
+                        <h3 class="h5 mb-20">تقطيع الأبيات **</h3>
+                        <!-- Grid -->
+                        
+                        <div class="poetry-verses-slashed">
+                            <!-- Verses Group -->
+                            <div id="poetry-seas-group" class="row gpx-20 gpy-20">
+                                
+                            </div>
+                            <!-- // Verses Group -->
+                        </div>
+                        <!-- // Grid -->
+                    </form>
+
+                    <span class="color-gray fs-12" >* يعتمد التشكيل التلقائي للنصوص على تقنيات الذكاء الاصطناعي عبر نموذج علام، وجودته تتحسن بتطور هذه التقنيات في دعم معالجة اللغة العربية </span>
+                    <br>
+                    <span class="color-gray fs-12" >** العمل على زحافات وعلل البحور الشعرية لا يزال قيد التطوير </span>
+                    <br>
+                    <br>
+                    
+                    <!-- Buttons Group -->
+                    <div class="flexbox align-center-x tx-align-center">
+                        <!-- Button -->
+                        <button type="button" onclick="location.reload();" class="reset-button mx-10 regenerate-btn">
+                            <span class="mouse-no-events btn secondary square radius-circle xlarge fas fa-redo mb-15"></span>
+                            <h6 class="mouse-no-events fs-15">ابدأ من جديد</h6>
+                        </button>
+                        <!-- Button -->
+                        <button type="button" class="reset-button mx-10" data-modal="rating-popup">
+                            <span class="mouse-no-events btn gray square radius-circle xlarge fas fa-star mb-15" ></span>
+                            <h6 class="mouse-no-events fs-15">تقييم التطبيق</h6>
+                        </button>
+                        <button type="button" onclick="showDonation();" class="reset-button mx-10 regenerate-btn">
+                            <span class="mouse-no-events btn warning square radius-circle xlarge fas fa-hand-holding-usd mb-15"></span>
+                            <h6 class="mouse-no-events fs-15">ادعم التطبيق</h6>
+                        </button>                        
+                        <script>
+                            function showDonation(){
+                                const donate_btn = document.getElementById('donate-button');
+                                //donate_btn.click();
+                                donate_btn.childNodes[0].dispatchEvent(new Event('click'));
+                            }
+                        </script>
+                        
+                        <div id="donate-button-container">
+                            <div id="donate-button"></div>
+                            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                            <script>
+                                PayPal.Donation.Button({
+                                    env:'production',
+                                        hosted_button_id:'BM2GBDLHHNHQE',
+                                    image: {
+                                        src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                                        alt:'Donate with PayPal button',
+                                        title:'PayPal - The safer, easier way to pay online!',
+                                    }
+                                }).render('#donate-button');
+                                const donate_btn = document.getElementById('donate-button');
+                                //Decided to hid the PayPal button, as I found a better way to show my own button. the rest is unnecessary
+                                donate_btn.style.display = 'none';
+                            </script>
+                        </div>
+                    </div>
+                    <!-- // Buttons Group -->
+                </div>
+                <!-- // Content Wrapper -->
+            </div>
+            <!-- // Column -->
+        </div>
+        <!-- // Grid -->
+    </div>
+    <!-- // App Root -->
+
+    <!-- Modal Component -->
+    <div class="px-modal hidden align-center" id="rating-popup">
+        <!-- Container -->
+        <div class="modal-content w-min-280 w-max-580 bg-white radius-sm">
+            <!-- Headline -->
+            <h4 class="fs-15 pdx-20 pdy-10 divider-b">تقييم التطبيق</h4>
+            <!-- Close Button -->
+            <button class="modal-close far fa-times btn square ms-15 bg-transparent color-danger position-ab pos-top-0 pos-end-0"></button>
+            <!-- Modal Body -->
+            <div class="pdx-20 pdy-10">
+                <!-- Description -->
+                <p>يمكنك تقييم تجربتك أكثر من مرة لتعلمنا عن أداء التطبيق في تفاعلاتك المختلفة معه</p>
+                <!-- Form Rating Default -->
+                <div class="rating-control h2 tx-align-center color-gray">
+                    <input type="number" class="hidden" />
+                </div>
+                <button id="rate-btn" class="btn outline primary display-block mgx-auto w-max-125" style="">أرسل</button>
+                <!-- Rating Style -->
+                <style> .rating-control a:not(.color-warning) {color: var(--gray-color);} </style>
+            </div>
+            <!-- // Modal Body -->
+        </div>
+        <!-- Container -->
+    </div>
+    <!-- // Modal Component -->
+
+    <!-- Mini Footer -->
+    <div class="pdy-20 bg-dark-lvl-2 color-gray">
+        <div class="container flexbox align-between align-center-y gpy-0">
+            <p class="tx-align-center fs-14 lineheight-100">تحدي علام 2024 - Allam Challenge 2024</p>
+            <!-- <p class="weight-bold fs-18">عدد الزوار : 87654</p> -->
+            <a href="https://info.flagcounter.com/DkcF"><img src="https://s11.flagcounter.com/count2/DkcF/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_12/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+        </div>
+    </div>
+
+    <!-- Required JS Files -->
+    <script src="js/phenix.js"></script>
+    <script src="js/shared-scripts.js" defer></script>
+    <!-- App Scripts -->
+    <script src="js/app-scripts.js" defer></script>	
+	    
+</body>
+</html>

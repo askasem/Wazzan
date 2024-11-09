@@ -5,6 +5,6 @@
 
 ## Repository Content
 ## Back-end Code:
-Contains the code for the web-services utilized by Wazzan. 
+The "Back-end" folder contains the code for the web-services utilized by Wazzan. 
 ## Front-end Code:
-Contains the UI/UX code of Wazzan.
+The "Front-end" folder contains the UI/UX code of Wazzan.

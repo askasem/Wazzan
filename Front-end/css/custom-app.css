@@ -1,0 +1,25 @@
+/*# Asem added the following */
+.active-sea {
+    padding: 6px;
+    /*border: 1px solid;
+    border-radius: 4px;  */
+    color: #22b544; /*--success-color : #22b544;*/
+}
+
+.secondary-sea {  
+    padding: 6px;
+    /*border: 1px solid;
+    border-radius: 4px;*/  
+    color:#9e0136; /*--secondary-color : #F8C35B;*/
+}
+
+.info-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    
+    color: #8a6d3b;
+    /*background-color: #fcf8e3;
+    border-color: #faebcc;*/
+}

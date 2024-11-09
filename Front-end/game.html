@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>تحدي بحور الشعر</title>
+    <!-- Required CSS Files -->
+    <link href="css/phenix-rtl.css" rel="stylesheet" />
+    <link href="css/custom-app.css" rel="stylesheet" />
+    <!-- Load Fonts -->
+    <link id="main-font" href="webfonts/somar-rounded.css" rel="stylesheet" />
+    <link id="icons-font" href="webfonts/fontawesome-5.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Main Header -->
+    <header class="main-header pdy-10 bg-white bx-shadow-dp-1" data-sticky="absolute">
+        <div class="container flexbox align-between align-center-y">
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="img/logo.png" width="200" height="42" alt="" class="hidden-md-down" />
+                <img src="img/logo-icon.png" width="42" height="42" alt="" class="hidden-lg-up" />
+            </a>
+            <!-- Action Area -->
+            <div class="flexbox align-center-y">
+                <!-- Main Menu -->
+                <nav class="px-navigation hidden-md-down" style="--color:var(--dark-color);" data-id="main-menu"
+                    data-hover="true" data-mobile="custom" data-effect="fade">
+                    <ul class="reset-list flexbox fs-16">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="game.html">علّام يختبرك</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </nav>
+                <!-- Menu Button -->
+                <a href="#" class="btn secondary menu-toggle hidden-lg-up square far fa-bars radius-sm"
+                    data-id="main-menu"></a>
+                <!-- App Button -->
+                <a href="app.html" class="btn bg-grade-primary color-white radius-sm ms-15">الكشف عن البيت الشعري</a>
+            </div>
+            <!-- // Action Area -->
+        </div>
+    </header>
+    <!-- // Main Header -->
+
+    <!-- Game Root -->
+    <div class="container">
+        <!-- Grid -->
+        <div class="row gpx-0 fullscreen">
+            <!-- Column -->
+            <div class="col col-lg-6 px-media bgr-n bgh-75 bgp-cc bg-white bx-shadow-dp-1"
+                data-src="img/background-father.svg">
+                <!-- Content Wrapper -->
+                <div class="pd-15 pd-md-30 pd-lg-40 pd-xl-50 px-scrollbar">
+                    <h2>تحدّي بحور الشعر، مع علام!</h2>
+                    <div style="display:grid; grid-template-columns:1fr 1fr">
+                        <!-- Requested Poetry Type -->
+                        <div class="mb-20">
+                                <!-- Head Content -->
+                            <p class="mb-20">
+                                ألقِ شطراً شعرياً من البحر المطلوب للفوز، لديك
+                                <span id="maxOfTotalAttempts" class="color-primary">0</span>
+                                محاولات
+                            </p>
+                            <h3>البحر المطلوب: <span class="color-primary" id="poetry-type">الطويل</span></h3>
+                            <!-- Result and Reward -->
+                            <h3>النتيجة حتى الآن: 
+                                <span id="numberOfCorrectAttempts" class="mb-20 color-success">0</span>
+                                من
+                                <span id="numberOfAttempts" class="mb-20 color-primary">0</span>
+                                محاولات
+                            </h3>
+                        </div>
+
+                        <div style="display: flex; flex-flow: row wrap; justify-content:center; align-items: start;">
+                            <!-- Player Name Input -->
+                             <div style="display: grid; grid-template-columns: 1fr;">
+                                <label for="player-name">اسم المستخدم:</label> 
+                                <input type="text" id="player-name" class="" placeholder="أدخل اسمك">
+                                <label for="player-name">المستوى:</label> 
+                                <select title="level" id="level" value="1" onchange="prepareForLevel()">
+                                    <option>المستوى الأول</option>
+                                    <option>المستوى المتوسط</option>
+                                    <option>المستوى المتقدم</option>
+                                </select>
+                                  
+                            </div>
+                            <button id="mic_button" type="button" class="tx-align-center reset-button mx-10 voice-btn w-min-150">
+                                <span
+                                    class="mouse-no-events btn primary icon-lg square radius-circle xlarge fas fa-microphone mb-15"></span>
+                                <h6 class="fs-15 mouse-no-events">ابدأ الإلقاء</h6>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- User Input -->
+                    <div class="mb-20">
+                        <!-- User Form -->
+                        <h3 class="h5 mb-20">الشطر الشعري</h3>
+                        <form class="poetry-verses mb-20" >
+
+                        </form>
+
+                        <!-- Grid -->
+                        <h3 class="h5 mb-20">الشطر مشكلاً *</h3>
+                        <div class="poetry-verses-ai mb-30">
+
+                        </div>
+                        <!-- // Grid -->
+                        <h3 class="h5 mb-20">التقطيع العروضي **</h3>
+                        <div class="poetry-verses-slashed">
+                            <!-- Verses Group -->
+                            <div id="poetry-seas-group" class="row gpx-20 gpy-20">
+
+                            </div>
+                            <!-- // Verses Group -->
+                        </div>
+                    </div>
+                    <span class="color-gray fs-12" >* يعتمد التشكيل التلقائي للنصوص على تقنيات الذكاء الاصطناعي عبر نموذج علام، وجودته تتحسن بتطور هذه التقنيات في دعم معالجة اللغة العربية </span>
+                    <br>
+                    <span class="color-gray fs-12" >** العمل على زحافات وعلل البحور الشعرية لا يزال قيد التطوير </span>
+                    <br>
+                    <!-- // User Input -->
+
+                </div>
+                <!-- // Content Wrapper -->
+            </div>
+            <!-- // Column -->
+        </div>
+        <!-- // Grid -->
+    </div>
+    <!-- // Game Root -->
+
+    <!-- Required JS Files -->
+    <script src="js/phenix.js"></script>
+    <script src="js/shared-scripts.js" defer></script>
+    <!-- App Scripts -->
+    <script src="js/game-scripts.js" defer></script>
+</body>
+
+</html>
